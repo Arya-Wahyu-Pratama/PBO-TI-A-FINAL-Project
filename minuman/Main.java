@@ -1,6 +1,7 @@
 package minuman;
 
 import minuman.config.DatabaseConfig;
+import minuman.entities.User;
 import minuman.repositories.DrinkRepository;
 import minuman.repositories.DrinkRepositoryImpl;
 import minuman.repositories.UserRepository;
@@ -11,7 +12,6 @@ import minuman.service.UserService;
 import minuman.service.UserServiceImpl;
 import minuman.views.AdminView;
 import minuman.views.UserView;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -46,8 +46,8 @@ public class Main {
                         adminView.showAdminMenu();
                         break;
                     case 2:
-                        // Launch User View
-                        UserView userView = new UserView(drinkService);
+                        // Launch User View with Login/Register
+                        UserView userView = new UserView(userService, drinkService);
                         userView.showUserMenu();
                         break;
                     case 3:

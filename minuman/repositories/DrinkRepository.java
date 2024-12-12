@@ -1,10 +1,9 @@
-package minuman.service;
+package minuman.repositories;
 
 import minuman.entities.Drink;
-
 import java.util.List;
 
-public interface DrinkService {
+public interface DrinkRepository {
     List<Drink> getAllDrinks();
     void updateDrink(Drink drink);
     void addDrink(Drink drink);
